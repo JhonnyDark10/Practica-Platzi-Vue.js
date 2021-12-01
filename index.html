@@ -1,0 +1,39 @@
+<html>
+<body>
+    <div id="app">
+      <h1>
+        👀 Reto - Mis Cursos de Platzi 👀
+      </h1>
+        <p>
+         Titulo Del Curso:
+          <input v-model="title" type="text" placeholder="Titulo del curso"/>
+        </p>
+        <p>
+            Numero De Horas:
+          <input v-model="time" type="number" placeholder="Horas"/>
+        </p>
+        <p>
+          <button v-on:click="addCourse">Guardar Curso</button>
+        </p>
+      </fieldset>
+      <div>
+        <h3>Lista de Cursos</h3>
+        <p>Aun no has realizado cursos</p>
+        <div>
+          <ol>
+            <li v-for="(course, index) in courses" :key="index">
+                {{course.title}} - {{course.time}} hours
+            </li>
+          </ol>
+          <hr/>
+          <p>
+            Llevo <strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
+            <b>#NuncaParesDeAprender 💚</b>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
